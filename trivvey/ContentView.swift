@@ -39,10 +39,8 @@ struct ContentView: View {
     }
     
     private func loadQuestions() {
-        guard let url = Bundle.main.url(forResource: "questions", withExtension: "json") else {
-                print("questions.json not found")
-                return
-            }
+        let url = Bundle.main.url(forResource: "questions", withExtension: "json")!
+        
         do {
             let data = try Data(contentsOf: url)
             // decode the questions
